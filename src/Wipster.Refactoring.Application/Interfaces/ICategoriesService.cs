@@ -5,6 +5,8 @@ using Wipster.Refactoring.Application.Dtos;
 
 namespace Wipster.Refactoring.Application
 {
+    //Note CRUD service?? Seems like a pointless abstraction. Services must embody strict behavior orchestration
+    //if this is absolutely necessary, this can be a generic class defining this behavior shared by other objects
     public interface ICategoriesService
     {
         Task<CategoriesListResponse> GetAll();

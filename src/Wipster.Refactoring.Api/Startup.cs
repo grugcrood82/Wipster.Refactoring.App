@@ -53,6 +53,8 @@ namespace Wipster.Refactoring.Api
             {
                 endpoints.MapControllers();
             });
+            
+            //JWT may be better placed for Auth here
         }
     }
 }

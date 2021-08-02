@@ -2,6 +2,7 @@
 
 namespace Wipster.Refactoring.Domain.Entities
 {
+    //Anemic Entities. The domain behaviors have not been modelled here, thus the behaviors are mutable and unpredictable. 
     public class AuditableEntity
     {
         public string CreatedBy { get; set; }

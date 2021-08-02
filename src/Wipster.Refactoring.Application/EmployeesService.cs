@@ -21,6 +21,7 @@ namespace Wipster.Refactoring.Application
 
         public async Task<EmployeesListResponse> GetAllAsync()
         {
+            // consider paging and filtering for large datasets
             var result = await _dbContext.Employees.ToListAsync();
             var response = new EmployeesListResponse();
 

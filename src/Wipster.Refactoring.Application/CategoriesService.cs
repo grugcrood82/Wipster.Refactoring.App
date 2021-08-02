@@ -22,6 +22,7 @@ namespace Wipster.Refactoring.Application
         public async Task<CategoriesListResponse> GetAll()
         {
             var result = await _dbContext.Categories.ToListAsync();
+            //Doing the work and abandoning the result ??? Thee response object needs to be fleshed out
             return new CategoriesListResponse();
         }
 

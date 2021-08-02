@@ -5,6 +5,7 @@ namespace Wipster.Refactoring.Domain.Entities
 {
     public class Employee
     {
+        // redundant constructor 
         public Employee()
         {
 

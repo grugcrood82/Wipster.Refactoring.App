@@ -11,6 +11,7 @@ namespace Wipster.Refactoring.Domain.Entities
 
         public int ProductId { get; set; }
         public string ProductName { get; set; }
+        //Relationship Ids can be obtained from related objects
         public int? SupplierId { get; set; }
         public int? CategoryId { get; set; }
         public string QuantityPerUnit { get; set; }

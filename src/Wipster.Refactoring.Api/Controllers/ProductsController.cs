@@ -11,6 +11,12 @@ namespace Wipster.Refactoring.Api.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        //variable names must match the service being implemented
+        //Dependency injection required here. Hard gluing dependencies make this unmaintainable (Search SOLID Principles. R.C. Martins as good articles on this)
+
+        //inconsistent Routing strategy. The http attribute can specify the routing here
+        //inconsistent response objects in this class. 
+        //I prefer the response object / Document literal. In the event of exceptions occuring, we need to provide the caller with actionable intel.
         private ProductsService _products;
 
         public ProductsController()

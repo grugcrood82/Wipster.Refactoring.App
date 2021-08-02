@@ -7,5 +7,6 @@ namespace Wipster.Refactoring.Application.Dtos
 {
     public class ProductRequest
     {
+        //Empty class. Should not exist.
     }
 }

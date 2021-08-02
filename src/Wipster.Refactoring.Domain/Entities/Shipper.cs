@@ -6,6 +6,7 @@ namespace Wipster.Refactoring.Domain.Entities
     {
         public Shipper()
         {
+            //Hashset? 
             Orders = new HashSet<Order>();
         }
 
@@ -13,6 +14,7 @@ namespace Wipster.Refactoring.Domain.Entities
         public string CompanyName { get; set; }
         public string Phone { get; set; }
 
+        // Rather Use Ilist
         public ICollection<Order> Orders { get; private set; }
     }
 }

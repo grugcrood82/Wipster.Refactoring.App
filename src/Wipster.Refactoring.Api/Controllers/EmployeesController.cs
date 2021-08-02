@@ -21,8 +21,11 @@ namespace Wipster.Refactoring.Api.Controllers
         }
 
         [HttpGet]
+        // inconsistent approach to parameter passing. Stick to one method. either Query strings through out or url parameters
         public async Task<ActionResult<EmployeesListResponse>> GetAll([FromQuery] string country)
         {
+            // this logic belongs inside the service. Parse the country code in and reduce the methods
+            //Not all results must return Ok. Consider providing an appropriate response code based on operation success
             if (country != null)
             {
                 return Ok(await EmployeesService.GetAllByCountryAsync(country));
@@ -34,6 +37,7 @@ namespace Wipster.Refactoring.Api.Controllers
         }
 
         [HttpGet("{id}")]
+        //why are we getting Categories in an employees controller
         public async Task<ActionResult<CategoryResponse>> GetAsync(int id)
         {
             var result = await EmployeesService.GetByIdAsync(id);
@@ -41,6 +45,7 @@ namespace Wipster.Refactoring.Api.Controllers
         }
 
         [HttpPost]
+        //why are we getting Categories in an employees controller
         public async Task<ActionResult<CategoryResponse>> CreateAsync([FromBody] EmployeeRequest request)
         {
             var productId = await EmployeesService.CreateAsync(request);
@@ -48,6 +53,7 @@ namespace Wipster.Refactoring.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        //why are we getting Categories in an employees controller
         public async Task<ActionResult<CategoryResponse>> UpdateAsync(int id, [FromBody] EmployeeRequest request)
         {
             var result = await EmployeesService.UpdateAsync(id, request);
